@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SPA Quiz Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="spaQuiz.js"></script>
+    <link rel = "stylesheet" href="quizStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="initialScreen">
+            <h1>Welcome to the Quiz Application</h1>
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name">
+            <label for="quiz-selection">Select a quiz:</label>
+            <select id="quiz-selection">
+                <option value="1">Quiz 1</option>
+                <option value="2">Quiz 2</option>
+            </select>
+            <button id="startQuizButton" data-viewaction="startQuiz">Start Quiz</button>
+        </div>
+
+        <div id="display-data">
+        
+    </div>
+
+    
+    <script src="spaQuiz.js"></script>
+
+    <script id="quiz_template" type="text/x-handlebars-template">
+        <h2>Question {{questionIndex}}</h2>
+        <p>{{question}}</p>
+        {{#if questionType "multipleChoice"}}
+        <form id="form">
+            {{#each options}}
+            <label>
+                <input type="radio" name="answer" value="{{this}}">
+                {{this}}
+            </label>
+            <br>
+            {{/each}}
+        </form>
+        {{else if questionType "textResponse"}}
+        <textarea id="textResponse" rows="4" cols="50" placeholder="Enter your answer"></textarea>
+        {{else if questionType "imageSelection"}}
+        <div>
+            {{#each images}}
+            <label>
+                <input type="radio" name="answer" value="{{this}}">
+                <img src="{{this}}" alt="Image">
+            </label>
+            <br>
+            {{/each}}
+        </div>
+        {{/if}}
+        <button id="continueButton" data-viewaction="continue">Continue</button>
+    </script>
+
+    <script id="finalScreen_template" type="text/x-handlebars-template">
+        <h2>Final Screen</h2>
+        {{#if isPassingScore}}
+        <p>Congratulations, {{name}}! You passed the quiz!</p>
+        {{else}}
+        <p>Sorry, {{name}}. You failed the quiz.</p>
+        {{/if}}
+        <button id="returnButton" data-viewaction="return">Return to Main Page</button>
+    </script>
+</div>
+</body>
+
+</html>
