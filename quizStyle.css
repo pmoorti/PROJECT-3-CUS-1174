@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+/* Initial screen styles */
+#initialScreen {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#initialScreen label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#initialScreen input[type="text"],
+#initialScreen select {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+#initialScreen button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#initialScreen button:hover {
+    background-color: #0056b3;
+}
+
+/* Quiz question styles */
+.quiz-question {
+    margin-bottom: 20px;
+}
+
+.quiz-question h2 {
+    margin-bottom: 10px;
+}
+
+.quiz-question p {
+    margin-bottom: 15px;
+}
+
+.quiz-question form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.quiz-question form input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Final screen styles */
+#finalScreen {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#finalScreen p {
+    margin-bottom: 20px;
+}
+
+#finalScreen button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#finalScreen button:hover {
+    background-color: #0056b3;
+}
